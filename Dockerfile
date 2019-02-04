@@ -4,9 +4,11 @@ USER root
 
 RUN git clone https://github.com/op07n/qt3.git
 
-# RUN cd /workspace/qt3
+USER gitpod
 
-# RUN echo "yes" | ./configure -thread -fast
+RUN cd /workspace/qt3
 
-# RUN make
+RUN echo "yes" | ./configure -thread -fast
+
+RUN make
 
