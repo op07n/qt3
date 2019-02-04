@@ -2,7 +2,7 @@ FROM gitpod/workspace-full-vnc:latest
 
 RUN git clone https://github.com/op07n/qt3.git
 
-RUN cd qt
+RUN cd qt3
 
 RUN ./configure -thread
 
