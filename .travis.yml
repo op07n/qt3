@@ -12,7 +12,7 @@ script:
       choco install make
       cp "C:\\ProgramData\\chocolatey\\bin\\gcc.exe" "C:\\ProgramData\\chocolatey\\bin\\cc.exe"
     fi
-  - ./configure
+  - ./configure -thread -fast
   - make clean
   - make depend
   - make -j4
