@@ -1,0 +1,19 @@
+language: c
+matrix:
+  include:
+
+    - os: windows
+      language: sh
+      filter_secrets: false
+
+script:
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then
+      choco install make
+      cp "C:\\ProgramData\\chocolatey\\bin\\gcc.exe" "C:\\ProgramData\\chocolatey\\bin\\cc.exe"
+    fi
+  - ./configure
+  - make clean
+  - make depend
+  - make -j4
+  - make run
